@@ -28,7 +28,7 @@ classdef InvertedPendulum
 	methods
 
         function u = my_pid(obj, e, G)
-            [kp;ki;kd] = G;
+            [kp ki kd] = G;
             de = (e - obj.old_e)/obj.dt_;
             obj.E = e*obj.dt + obj.E;
 
