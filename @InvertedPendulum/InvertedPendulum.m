@@ -5,7 +5,7 @@ classdef InvertedPendulum
 		trans_
 
         old_e
-        E
+        E_
 	end
 
 	properties  (Access = public)
@@ -27,13 +27,12 @@ classdef InvertedPendulum
 
 	methods
 
-        function u = my_pid(obj, e, G)
-            [kp ki kd] = G;
-            de = (e - obj.old_e)/obj.dt_;
-            obj.E = e*obj.dt + obj.E;
+        function u = my_pid(inverted_pendulum, e, G)
+            de = (e - inverted_pendulum.old_e)/inverted_pendulum.dt_;
+            inverted_pendulum.E_ = e*inverted_pendulum.dt_ + inverted_pendulum.E_;
 
-            u = kp * e + ki * E + kd * de;
-            obj.old_e = e;
+            u = G(1) * e + G(2) * inverted_pendulum.E_ + G(3) * de;
+            inverted_pendulum.old_e = e;
         end
 
 		function inverted_pendulum = InvertedPendulum(ax)

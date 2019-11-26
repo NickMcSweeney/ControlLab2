@@ -16,10 +16,10 @@ G = [0; 0; 0];
 for i=1:length(t)
 	tic;
     e = 0 - inverted_pendulum.x_(1)
-	inverted_pendulum.u_ = inverted_pendulum.my_pid(inverted_pendulum, e, G); %set the control input at the current time step
-		
+	inverted_pendulum.u_ = inverted_pendulum.my_pid(e, G); %set the control input at the current time step
+
 	inverted_pendulum.x_=inverted_pendulum.step; %integrate forward according to x_new=f(x,u,dt) and update the state vector
 	duration=toc;
-	
+
 	pause(inverted_pendulum.dt_-duration); %a crude way of making the visualization appear in real-time
 end
