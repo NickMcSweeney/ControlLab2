@@ -10,11 +10,12 @@ inverted_pendulum.dt_= 5*1e-3;   %set the sampling rate
 tf=8;
 t=linspace(0,tf,tf/inverted_pendulum.dt_);
 
-G = [9.82; 3.14; 0.01];
+G = [9.86; 0.048; 3.87];
 
 control = PIDController(inverted_pendulum.dt_);
 
 x_vec = zeros(1,length(t));
+u_vec = zeros(1,length(t));
 
 for i=1:length(t)
 	tic;
@@ -24,6 +25,7 @@ for i=1:length(t)
 	inverted_pendulum.x_=inverted_pendulum.step; %integrate forward according to x_new=f(x,u,dt) and update the state vector
 
     x_vec(i) = inverted_pendulum.x_(1);
+    u_vec(i) = inverted_pendulum.u_;
 
 	duration=toc;
 
@@ -32,4 +34,7 @@ end
 
 pause; clf;
 plot(1:length(t),x_vec, 'b-');
+%hold on;
+%plot(1:length(t),u_vec, 'r-');
+%hold off;
 pause; clf;
