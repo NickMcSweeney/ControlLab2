@@ -7,7 +7,7 @@ inverted_pendulum.x_=[0.3; 0]; %set the initial state (x=[theta; dtheta])
 inverted_pendulum.dt_= 5*1e-3;   %set the sampling rate
 
 %Simulation duration
-tf=8;
+tf=4;
 t=linspace(0,tf,tf/inverted_pendulum.dt_);
 
 G = [9.86; 0.048; 3.87];
