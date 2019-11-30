@@ -8,7 +8,7 @@ K = [k1 k2]; % gain matrix <-- what we want to know;
 x = [Theta;dTheta];
 u = -K*x;
 
-% Using the function: x_dot = A*x - B*K_x
+% Using the function: x_dot = A*x - B*K*x
 %   solve for the vector k by obtaining the eigenvalues.
 
 % ddTheta = (g/l)*sin(Theta) + c*u;
@@ -39,5 +39,5 @@ det_eigMat = det(eigValMat); % take determinite
 % lam1 = 1, lam2 = -1
 % equivicate to determinite:
 % lambda^2 + 2*lambda + 1 = lambda^2 + k2*lambda + k1 - 981/100
-% k2 = 2
 % k1 = 1+9.81 = 10.81;
+% k2 = 2
