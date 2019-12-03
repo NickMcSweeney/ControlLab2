@@ -36,8 +36,8 @@ det_eigMat = det(eigValMat); % take determinite
 % lambda^2 + k2*lambda + k1 - 981/100
 %
 % given f(lam) = (lam - lam1)(lam - lam2)
-% lam1 = 1, lam2 = -1
+% lam1 = -1, lam2 = -2
 % equivicate to determinite:
-% lambda^2 + 2*lambda + 1 = lambda^2 + k2*lambda + k1 - 981/100
-% k1 = 1+9.81 = 10.81;
-% k2 = 2
+% lambda^2 + 3*lambda + 2 ==> lambda^2 + k2*lambda + k1 - 981/100
+% k1 = 2+9.81 = 11.81;
+% k2 = 3

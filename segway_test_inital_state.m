@@ -3,11 +3,11 @@ clear all; close all; clc;
 segway=Segway; %create a 2D segway instance
 axis([-3,3,-1.5,1.5]); pbaspect([3 1.5 1]); grid on; %adjust the visualization settings
 
-segway.x_=[0.01; 0; 0.3; 0]*3.4; %set the initial state (x=[x; dx; theta; dtheta])
+segway.x_=[0.01; 0; 0.3; 0]*3.35; %set the initial state (x=[x; dx; theta; dtheta])
 segway.dt_= 2*1e-3;   %set the sampling rate
 
 %Simulation duration
-tf=6;
+tf=3;
 t=linspace(0,tf,tf/segway.dt_);
 
 k1 =   -2.2599;
@@ -36,9 +36,9 @@ clf;
 segway=Segway; %create a 2D segway instance
 axis([-3,3,-1.5,1.5]); pbaspect([3 1.5 1]); grid on; %adjust the visualization settings
 
-segway.x_=[0.01; 0; 0.3; 0]*3.35; %set the initial state (x=[x; dx; theta; dtheta])
+segway.x_=[0.01; 0; 0.3; 0]*3.34; %set the initial state (x=[x; dx; theta; dtheta])
 segway.dt_= 2*1e-3;   %set the sampling rate
-tf=6;
+tf=4;
 t=linspace(0,tf,tf/segway.dt_);
 
 b_vec = zeros(1,length(t));
@@ -58,7 +58,7 @@ clf;
 segway=Segway; %create a 2D segway instance
 axis([-3,3,-1.5,1.5]); pbaspect([3 1.5 1]); grid on; %adjust the visualization settings
 
-segway.x_=[0.01; 0; 0.3; 0]*3.3; %set the initial state (x=[x; dx; theta; dtheta])
+segway.x_=[0.01; 0; 0.3; 0]*3.33; %set the initial state (x=[x; dx; theta; dtheta])
 segway.dt_= 2*1e-3;   %set the sampling rate
 tf=6;
 t=linspace(0,tf,tf/segway.dt_);

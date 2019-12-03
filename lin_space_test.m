@@ -1,7 +1,5 @@
 clear all; close all; clc;
 
-K = [10.81 2];
-
 dT = 5*1e-3;
 tf=4;
 t = length(linspace(0,tf,tf/dT));
@@ -15,6 +13,6 @@ pause; clf;
 plot(T,X(:,1), 'b-');
 
 function X = pendulum(t,x)
-    K = [10.81 2];
+    K = [11.81 3];
     X = (9.81)*sin(x(1)) - K*x;
 end

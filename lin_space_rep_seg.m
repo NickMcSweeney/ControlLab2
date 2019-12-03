@@ -37,7 +37,7 @@ syms k1 k2 k3 k4 lambda;
 I = eye(4); % the identity matrix
 K = [k1,k2,k3,k4];
 u = -K*x_;
-fx = A*x_+B*u;
+Dx = A*x_+B*u;
 % fx is equal to:
 %                                           dx
 %        9*th - dth*k4 - dx*k2 - k3*th - k1*x
