@@ -10,9 +10,7 @@
 \usepackage{url}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{18pt}
-\title{Robot Control Exercise 4: State Feedback Control\\
-    \texttt{inv\_pend\_test.m}\\
-    \texttt{segway\_test.m}}
+\title{Robot Control Exercise 4: State Feedback Control}
 \author{Nicholas Shindler, \texttt{shindler25@gmail.com}}
 % //////////////////////////////////////////////////
 
@@ -197,5 +195,28 @@ Setting only $\hat{x}_0$ to be scaled resulted in a much much lower potential sc
     \caption{Theta(t) with gain matrix -- r(t) = sin(t)}
     \label{fig:th_segway}
 \end{figure}
+
+\section{Code}
+    \texttt{inv\_pend\_test.m} - inverse pendulum test with u calculated with pid or -Kx
+
+    \texttt{segway\_test.m} - segway with control calculated u, with tests for max scaled initial state
+
+    \texttt{segway\_gains.m} - segway with gain matrix added
+
+    \texttt{segway\_giro\_test.m} - segway with giro controller added in
+
+    \texttt{segway\_obs\_test.m} - test function for segway using observer calculations
+
+    \texttt{segway\_test\_initial\_state.m} - segway test script for initial scaling using the control function
+
+    \texttt{observer.m} - calculations for observably
+
+    \texttt{lin\_space\_rep\_seg.m} - calculations for segway control
+
+    \texttt{lin\_space\_test.m} - test for inverse pendulum control
+
+    \texttt{lin\_space\_rep.m} - calculations for inverse pendulum control
+
+    \texttt{PIDController} - pid class for inverse pendulum
 
 \end{document}
